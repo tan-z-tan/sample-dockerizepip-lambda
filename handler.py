@@ -1,15 +1,18 @@
 import json
+import numpy as np
 
 
 def hello(event, context):
     body = {
         "message": "Go Serverless v1.0! Your function executed successfully!",
-        "input": event
+        "input": event,
+        "numpy_value": np.random.rand(3, 2).tolist(),
     }
 
     response = {
         "statusCode": 200,
         "body": json.dumps(body)
+        
     }
 
     return response
